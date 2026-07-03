@@ -3,6 +3,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    z-index: 100;
 }
 
 .left-section{
@@ -55,9 +62,44 @@
     margin-left: -1px;
 }
 
+.search-button,
+.voice-search-button,
+.upload-icon-conatiner,
+.notifications-container,
+.apps-icon-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.search-button .tool-tip,
+.voice-search-button .tool-tip,
+.upload-icon-container .tool-tip,
+.notifications-container .tool-tip,
+.apps-icon-container .tool-tip{
+    font-family: Roboto, Arial;
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding: 4px 6px;
+    font-size: 12px;
+    border-radius: 2px;
+    bottom: -30px;
+    opacity: 0; 
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.search-button:hover .tool-tip,
+.voice-search-button:hover .tool-tip,
+.upload-icon-container:hover .tool-tip,
+.notifications-container:hover .tool-tip,
+.apps-icon-container:hover .tool-tip{
+    opacity: 1;
+}
 .search-icon{
     height: 24px;
-    margin-top: 4px;
 }
 .search-bar::placeholder{
     font-size: 16px;
@@ -72,12 +114,10 @@
 }
 .voice-search-icon{
     height: 24px;
-    margin-top: 4px;
 }
 
 .right-section{
     width: 180px;
-    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -85,22 +125,36 @@
 }
 .upload-icon{
     height: 24px;
-    margin-right: 20px;
     cursor: pointer;
 }
 .apps-icon{
     height: 24px;
-    margin-right: 20px;
     cursor: pointer;
 }
 .notifications-icon{
     height: 24px;
-    margin-right: 20px;
     cursor: pointer;
+}
+
+.notifications-container{
+    position: relative;
+}
+.notification-count{
+    position: absolute;
+    top: -1px;
+    right: -3px;
+    background-color: rgb(194, 17, 17);
+    color: white;
+    font-family: Roboto, Arial;
+    font-size: 8px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 5px;
 }
 .profile-pic{
     height: 32px;
     width: 32px;
     border-radius: 50%;
     cursor: pointer;
+    margin-right: 24px;
 }
